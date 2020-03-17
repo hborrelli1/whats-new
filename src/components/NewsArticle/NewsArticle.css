@@ -1,0 +1,11 @@
+.news-article {
+  width:33.3%;
+
+  display:flex;
+  flex-flow:column;
+  background-color:#fff;
+}
+
+.news-article img {
+  width:100%;
+}
