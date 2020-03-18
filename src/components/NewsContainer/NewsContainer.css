@@ -1,5 +1,6 @@
 .news-container {
   display:flex;
   flex-flow:wrap;
-  
+  width:75%;
+  min-height:100px;
 }

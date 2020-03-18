@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Button = ({ category, changeCategory }) => {
+const Button = ({ category, handleChange, selectedMenu }) => {
   return (
     <button
+      className={selectedMenu === category ? 'active' : ''}
       id={category}
       key={category}
-      onChange={event => changeCategory(category)}
+      onClick={(event) => handleChange(event)}
     >
       {category}
     </button>

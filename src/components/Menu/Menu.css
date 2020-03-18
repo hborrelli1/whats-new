@@ -1,0 +1,26 @@
+aside {
+  width:25%;
+  display:flex;
+  flex-flow:column;
+  justify-content: flex-start;
+
+}
+
+aside button {
+  background-color:transparent;
+  border:0;
+  color:#fff;
+  text-transform:capitalize;
+  margin-bottom: 10px;
+  font-size:15px;
+  text-align:left;
+  padding:5px 20px;
+}
+
+aside button:hover {
+  cursor:pointer;
+}
+
+aside button.active {
+  font-weight:bold;
+}

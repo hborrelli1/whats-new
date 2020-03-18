@@ -6,36 +6,64 @@ import science from '../../data/science';
 import technology from '../../data/technology';
 
 import Menu from '../Menu/Menu';
+import Header from '../Header/Header';
 import NewsContainer from '../NewsContainer/NewsContainer';
 import './App.css';
 
 class App extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
-      news: {entertainment, health, local, science, technology },
+      // news: {local, technology, entertainment, science, health },
+      news: null,
+      // news: {
+      //   local:[],
+      //   technology: [],
+      //   entertainment:[],
+      //   science:[],
+      //   health:[]
+      // },
       selectedMenu: 'local',
+      searchQuery: '',
+      isLoading: false,
     }
   }
 
-  handleChange = event => {
-    console.log(event.target)
-    // this.setState({ selectedMenu: event.target.id });
+  componentDidMount() {
+    this.setState({ isLoading: true });
+
+    fetch('https://whats-new-api.herokuapp.com/api/v1/news')
+      .then(response => response.json())
+      .then(data => this.setState({ news: data, isLoading: false }))
+  }
+
+  handleChange = (event) => {
+    this.setState({ selectedMenu: event.target.id });
+  }
+
+  setSearchQuery = (term) => {
+    this.setState({ searchQuery: term });
   }
 
   render () {
     return (
-      <div className="app">
+      <main className="app">
+        <Header
+          news={this.state.news}
+          searchQuery={this.state.searchQuery}
+          setSearchQuery={this.setSearchQuery}
+        />
         <Menu
-          categories={Object.keys(this.state.news)}
+          news={this.state.news}
           selectedMenu={this.state.selectedMenu}
-          onChange={event => this.handleChange(event)}
+          handleChange={this.handleChange}
         />
         <NewsContainer
           news={this.state.news}
           selectedMenu={this.state.selectedMenu}
+          searchQuery={this.state.searchQuery}
         />
-      </div>
+      </main>
     );
   }
 }

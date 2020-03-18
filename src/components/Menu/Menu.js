@@ -3,20 +3,27 @@ import Button from '../Button/Button';
 import './Menu.css';
 
 const Menu = (props) => {
+  let categoryButtons;
 
-  const categoryButtons = props.categories.map(cat => (
-    <Button
+  if (props.news !== null) {
+    let categories = Object.keys(props.news)
+    categoryButtons = categories.map(cat => (
+      <Button
       id={cat}
       key={cat}
       category={cat}
-      onChange={event => props.onchange(event.id)}
-    />
-  ));
+      handleChange={props.handleChange}
+      selectedMenu={props.selectedMenu}
+      />
+    ));
+  } else {
+    categoryButtons = (<p>Loading ...</p>);
+  }
 
   return (
-    <nav>
+    <aside>
       {categoryButtons}
-    </nav>
+    </aside>
   )
 }
 
