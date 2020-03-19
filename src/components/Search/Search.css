@@ -23,4 +23,9 @@ form button {
   width: 25%;
   background-color:purple;
   border-radius:20px;
+  color:#fff;
+  font-size:17px;
+  text-transform:uppercase;
+  font-weight:500;
+  letter-spacing:1px;
 }

@@ -9,7 +9,6 @@ const NewsContainer = (props) => {
 
   if (props.news === null) {
     cardsToDisplay = (<p>Loading ...</p>);
-
   } else {
     cardsToDisplay = props.news[props.selectedMenu].map(article => (
       <NewsArticle
@@ -21,7 +20,6 @@ const NewsContainer = (props) => {
         url={article.url}
       />
     ));
-
   }
 
   if(props.searchQuery !== '') {

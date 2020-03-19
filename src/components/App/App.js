@@ -14,15 +14,7 @@ class App extends Component {
   constructor(props) {
     super();
     this.state = {
-      // news: {local, technology, entertainment, science, health },
       news: null,
-      // news: {
-      //   local:[],
-      //   technology: [],
-      //   entertainment:[],
-      //   science:[],
-      //   health:[]
-      // },
       selectedMenu: 'local',
       searchQuery: '',
       isLoading: false,
