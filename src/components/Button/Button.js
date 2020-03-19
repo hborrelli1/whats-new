@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Button = ({ category, handleChange, selectedMenu }) => {
   const imgUrl = require(`../../icons/${category}.svg`);
@@ -13,6 +14,12 @@ const Button = ({ category, handleChange, selectedMenu }) => {
       {category}
     </button>
   )
+}
+
+Button.propTypes = {
+  className: PropTypes.string,
+  id: PropTypes.string,
+  key: PropTypes.string
 }
 
 export default Button;

@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from '../Search/Search';
 import './Header.css';
+import PropTypes from 'prop-types';
 
 const Header = (props) => {
   return (
@@ -10,12 +11,15 @@ const Header = (props) => {
       </div>
 
       <Search
-        new={props.news}
         searchQuery={props.searchQuery}
         setSearchQuery={props.setSearchQuery}
       />
     </header>
   )
+}
+
+Header.propTypes = {
+  searchQuery:  PropTypes.string
 }
 
 export default Header;

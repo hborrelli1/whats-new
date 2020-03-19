@@ -41,7 +41,6 @@ class App extends Component {
     return (
       <main className="app">
         <Header
-          news={this.state.news}
           searchQuery={this.state.searchQuery}
           setSearchQuery={this.setSearchQuery}
         />
