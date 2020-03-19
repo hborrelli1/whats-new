@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../Button/Button';
 import './Menu.css';
+import PropTypes from 'prop-types';
 
 const Menu = (props) => {
   let categoryButtons;
@@ -25,6 +26,11 @@ const Menu = (props) => {
       {categoryButtons}
     </aside>
   )
+}
+
+Menu.propTypes = {
+  id: PropTypes.string,
+  category: PropTypes.string
 }
 
 export default Menu;

@@ -1,6 +1,7 @@
 import React from 'react';
 import NewsArticle from '../NewsArticle/NewsArticle';
 import './NewsContainer.css'
+import PropTypes from 'prop-types';
 
 const NewsContainer = (props) => {
   const searchTermRegex = new RegExp(props.searchQuery.toLowerCase());
@@ -34,6 +35,10 @@ const NewsContainer = (props) => {
       {cardsToDisplay}
     </div>
   )
+}
+
+NewsContainer.propTypes = {
+  
 }
 
 export default NewsContainer;
